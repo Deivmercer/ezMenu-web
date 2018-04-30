@@ -1,0 +1,21 @@
+{
+  "name": "tesina-website",
+  "authors": [
+    "Deivmercer <davemercerdave@gmail.com>"
+  ],
+  "description": "Tesina per l' esame di stato",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
