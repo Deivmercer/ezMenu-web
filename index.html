@@ -1,8 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html ng-app="ezMenu">
     <head>
-        <title>Tesina</title>
+        <title>ezMenu</title>
     </head>
-    <body>
-        <h1>Scemo chi legge</h1>
+    <body ng-controller="homeCtrl">
+        <div ng-cloak>
+            <md-content>
+                <md-toolbar class="md-hue-2">
+                    <div style="padding-right:30px" class="md-toolbar-tools">
+                        <h2 flex md-truncate>ezMenu</h2>
+                        <md-button href="demo">Demo</md-button>
+                        <md-button translate="GET"></md-button>
+                    </div>
+                </md-toolbar>
+            </md-content>
+        </div>
+        <div style="padding-left:20px; padding-top: 20px"></div>
     </body>
+    
+    <footer class="footer" ng-controller="footerCtrl">
+        <hr>
+        <center>
+            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand" translate>ENGLISH</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer" translate>ITALIAN</a>
+        </center>
+    </footer>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="controller/app.js"></script>
+    <script src="controller/homeCtrl.js"></script>
+    <script src="controller/footerCtrl.js"></script>
+    <link rel="stylesheet" href="index.css">
 </html>
+
+<!-- HOLY SHIT 
+https://www.youtube.com/watch?v=1pbAV6AU99I 
+-->

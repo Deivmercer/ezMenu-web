@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="ezMenu">
+    <head>
+        <title>ezMenu</title>
+    </head>
+    <body ng-controller="editDeviceCtrl">
+        <div ng-cloak>
+            <md-content>
+                <md-toolbar class="md-hue-2">
+                    <div style="padding-right:30px" class="md-toolbar-tools"> 
+                        <h2 flex md-truncate><a href="index.html">ezMenu</a></h2>
+                    </div>
+                </md-toolbar>
+                <div style="position: fixed">
+                    <md-sidenav style="height: 100vh" class="md-sidenav-left" md-is-locked-open="true" md-whiteframe="4">
+                        <div layout="column">
+                            <md-button href="device_list.html" translate="DEVICELIST"></md-button>
+                            <md-button href="add_device.html" translate="ADDDEVICE"></md-button>
+                            <md-button disabled translate="EDITDEVICE"></md-button>
+                            <md-button href="delete_device.html" translate="DELETEDEVICE"></md-button>
+                            <md-button href="product_list.html" translate="PRODUCTLIST"></md-button>
+                            <md-button href="add_product.html" translate="ADDPRODUCT"></md-button>
+                            <md-button href="edit_product.html" translate="EDITPRODUCT"></md-button>
+                            <md-button href="delete_product.html" translate="DELETEPRODUCT"></md-button>
+                        </div>
+                    </md-sidenav>       
+                </div>
+                <div style="padding-left: 323px">
+                    <md-card>
+                        <md-card-title translate="EDITDEVICE"></md-card-title>
+                        <div style="padding-left:13px; padding-right:1200px">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label translate="DEVICELIST"></label>
+                                <md-select ng-model="selectDevice" ng-change="deviceSelected()">
+                                    <md-option ng-repeat="device in devices" value="{{device.name}}">
+                                        {{device.name}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <br>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label translate="DEVICENAME"></label>
+                                <input ng-model="device_name" type="text">
+                            </md-input-container>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label translate="DEVICETABLE"></label>
+                                <input ng-model="device_table" type="number" min="0">
+                            </md-input-container>
+                            <br>
+                            <md-button class='md-raised md-primary' ng-click="editDevice()" translate="SEND"></md-button>
+                        </div>
+                        <br>
+                    </md-card>
+                </div>
+            </md-content>
+        </div>
+    </body>
+    <footer style="position: fixed" class="footer" ng-controller="footerCtrl">
+        <hr>
+        <center>
+            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer">Italian</a>
+        </center>
+    </footer>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="libraries/qrcode.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="..//bower_components/angular-material/angular-material.min.css">
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
+    <script src="controller/app.js"></script>
+    <script src="controller/editDeviceCtrl.js"></script>
+    <script src="controller/footerCtrl.js"></script>
+    <link rel="stylesheet" href="../index.css">
+</html>

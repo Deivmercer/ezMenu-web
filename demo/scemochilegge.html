@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Cross-Browser QRCode generator for Javascript</title>
+        <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="libraries/qrcode.min.js"></script>
+    </head>
+    <body ng-app="prova" ng-controller="provaCtrl">
+        <input id="text" type="text" value="www.google.com" style="width:80%" /><br />
+        <input type="button" ng-click="makeCode()"/>
+        <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+    </body>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="controller/scemochilegge.js"></script>
+</html>

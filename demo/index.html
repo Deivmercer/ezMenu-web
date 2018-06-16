@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="ezMenu">
+    <head>
+        <title>ezMenu</title>
+    </head>
+    <body ng-controller="homeCtrl">
+        <div ng-cloak>
+            <md-content>
+                <md-toolbar class="md-hue-2">
+                    <div style="padding-right:30px" class="md-toolbar-tools">
+                        <h2 flex md-truncate>ezMenu</h2>
+                    </div>
+                </md-toolbar>
+                <div style="position: fixed">
+                    <md-sidenav style="height: 100vh" class="md-sidenav-left" md-is-locked-open="true" md-whiteframe="4">
+                        <div layout="column">
+                            <md-button href="device_list.html" translate="DEVICELIST"></md-button>
+                            <md-button href="add_device.html" translate="ADDDEVICE"></md-button>
+                            <md-button href="edit_device.html" translate="EDITDEVICE"></md-button>
+                            <md-button href="delete_device.html" translate="DELETEDEVICE"></md-button>
+                            <md-button href="product_list.html" translate="PRODUCTLIST"></md-button>
+                            <md-button href="add_product.html" translate="ADDPRODUCT"></md-button>
+                            <md-button href="edit_product.html" translate="EDITPRODUCT"></md-button>
+                            <md-button href="delete_product.html" translate="DELETEPRODUCT"></md-button>
+                        </div>
+                    </md-sidenav>       
+                </div>
+                <div style="padding-left: 323px" flex-xs flex-gt-xs="50">
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline" translate="NOTIFICATIONS"></span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                    </md-card>
+                    <md-list flex>   
+                        <md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="null">
+                            <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+                            <div class="md-list-item-text" layout="column">
+                                      <h3>{{ item.who }}</h3>
+                                <h4>{{ item.what }}</h4>
+                                <p>{{ item.notes }}</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button translate="CLEARALL"></md-button>
+                    </md-card-actions>
+                </div>
+                    <!-- <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+                        <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Extra Large</span>
+                        </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content layout="row" layout-align="space-between">
+                        <div class="md-media-xl card-media"></div>
+                
+                        <md-card-actions layout="column">
+                            <md-button class="md-icon-button" aria-label="Favorite">
+                            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="Settings">
+                            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="Share">
+                            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+                            </md-button>
+                        </md-card-actions>
+                        </md-card-content>
+                    </md-card>
+                    </div>
+                    <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                        <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Small</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media"></div>
+                        </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+                        <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card with image</span>
+                            <span class="md-subhead">Medium</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-md card-media"></div>
+                        </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                    <div layout layout-padding layout-align="center end" style="height:200px">
+                        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+                    </div>
+                    </div -->
+            </md-content>
+        </div>
+    </body>
+    <footer style="position: fixed" class="footer" ng-controller="footerCtrl">
+        <hr>
+        <center>
+            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer">Italian</a>
+        </center>
+    </footer>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="..//bower_components/angular-material/angular-material.min.css">
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="controller/app.js"></script>
+    <script src="controller/homeCtrl.js"></script>
+    <script src="controller/footerCtrl.js"></script>
+    <link rel="stylesheet" href="../index.css">
+</html>

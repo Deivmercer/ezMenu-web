@@ -1,0 +1,11 @@
+.footer { 
+    position: fixed;     
+    text-align: center;    
+    bottom: 5px; 
+    width: 100%;
+}  
+
+.side-nav_fix {
+    position: absolute;
+    min-height: 100% !important;
+}

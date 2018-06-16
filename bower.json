@@ -1,12 +1,12 @@
 {
-  "name": "tesina-website",
-  "authors": [
-    "Deivmercer <davemercerdave@gmail.com>"
-  ],
-  "description": "Tesina per l' esame di stato",
+  "name": "ezmenu",
+  "description": "Tesina",
   "main": "index.html",
+  "authors": [
+    "Davemercer"
+  ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "index.html",
   "private": true,
   "ignore": [
     "**/.*",
@@ -16,6 +16,16 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "angular-material": "^1.1.9",
+    "angular": "^1.7.0",
+    "angular-animate": "^1.7.0",
+    "angular-aria": "^1.7.0",
+    "angular-messages": "^1.7.0",
+    "angular-translate": "^2.17.1",
+    "material-design-icons": "^3.0.1",
+    "angular-uploadcare": "^0.2.0",
+    "ng-file-upload": "^12.2.13",
+    "qrcode.js": "davidshimjs/qrcodejs"
   }
 }
