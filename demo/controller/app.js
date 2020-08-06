@@ -4,7 +4,7 @@ app.config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
         "404ERROR": "Page not found.",
         "GET": "Get ezMenu",
-        "LANGUAGES": "Languages",
+        "LANGUAGE": "Language",
         "ENGLISH": "English",
         "ITALIAN": "Italian",
         "DEVICELIST": "Device list",
@@ -34,7 +34,7 @@ app.config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('it', {
         "404ERROR": "Pagina non trovata.",
         "GET": "Ottieni ezMenu",
-        "LANGUAGES": "Lingue",
+        "LANGUAGE": "Lingua",
         "ENGLISH": "Inglese",
         "ITALIAN": "Italiano",
         "DEVICELIST": "Lista dispositivi",
@@ -77,4 +77,8 @@ app.config(function($mdThemingProvider) {
     $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
     $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
     $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
+});
+
+app.config(function($mdIconProvider) {
+    $mdIconProvider.fontSet('md', 'material-icons');
 });

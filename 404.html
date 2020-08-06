@@ -2,38 +2,26 @@
 <html ng-app="ezMenu">
     <head>
         <title>ezMenu - 404</title>
+        <link rel="shortcut icon" type="image/png" href="icon/favicon.png"/>
     </head>
     <body ng-controller="addDeviceCtrl">
         <div ng-cloak>
             <md-content>
                 <md-toolbar class="md-hue-2">
                     <div style="padding-right:30px" class="md-toolbar-tools"> 
-                        <h2 flex md-truncate><a href="index.html">ezMenu</a></h2>
+                        <h2 flex md-truncate><a href="http://ezmenu.vpsgh.it/">ezMenu</a></h2>
                     </div>
                 </md-toolbar>
-                <div style="position: fixed">
-                    <md-sidenav style="height: 100vh" class="md-sidenav-left" md-is-locked-open="true" md-whiteframe="4">
-                        <div layout="column">
-                                <md-button href="device_list.html" translate="DEVICELIST"></md-button>
-                                <md-button href="add_device.html" translate="ADDDEVICE"></md-button>
-                                <md-button href="edit_device.html" translate="EDITDEVICE"></md-button>
-                                <md-button href="delete_device.html" translate="DELETEDEVICE"></md-button>
-                                <md-button href="product_list.html" translate="PRODUCTLIST"></md-button>
-                                <md-button href="add_product.html" translate="ADDPRODUCT"></md-button>
-                                <md-button href="edit_product.html" translate="EDITPRODUCT"></md-button>
-                                <md-button href="delete_product.html" translate="DELETEPRODUCT"></md-button>
-                        </div>
-                    </md-sidenav>       
-                </div>
-                <div style="padding-left: 323px">
-                    <md-card>
+                    <md-card style="position: fixed; transition: all 1s linear;height: 87%; width: 99%">
                         <md-card-title>404</md-card-title>
-                        <div style="padding-left:13px; padding-right:800px" name="form">
-                            {{ "404ERROR" | translate }}
-                        </div>
+                        <!-- <div style="padding-left:13px; > -->   
+                        <md-card-content style="padding-bottom: 750px">
+                            <p>{{ "404ERROR" | translate }}</p>
+                            <md-button class="md-primary md-raised" ng-click="history.back();">Go back</md-button>
+                        </md-card-content>
+                        <!-- </div> -->
                         <br>
                     </md-card>
-                </div>
             </md-content>         
         </div>
     </body>
@@ -43,18 +31,16 @@
             {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer">Italian</a>
         </center>
     </footer>
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="libraries/qrcode.min.js"></script>
-    <script src="../bower_components/angular/angular.min.js"></script>
-	<script src="../bower_components/angular-material/angular-material.min.js"></script>
-	<link rel="stylesheet" href="..//bower_components/angular-material/angular-material.min.css">
-    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
-    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="../bower_components/angular-translate/angular-translate.min.js"></script>
-    <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
-    <script src="controller/app.js"></script>
-    <script src="controller/addDeviceCtrl.js"></script>
-    <script src="controller/footerCtrl.js"></script>
-    <link rel="stylesheet" href="../index.css">
+    <script src="http://ezmenu.vpsgh.it/bower_components/angular/angular.min.js"></script>
+	<script src="http://ezmenu.vpsgh.it/bower_components/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="http://ezmenu.vpsgh.it/bower_components/angular-material/angular-material.min.css">
+    <script src="http://ezmenu.vpsgh.it/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="http://ezmenu.vpsgh.it/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="http://ezmenu.vpsgh.it/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="http://ezmenu.vpsgh.it/bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="http://ezmenu.vpsgh.it/bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
+    <script src="http://ezmenu.vpsgh.it/demo/controller/app.js"></script>
+    <script src="http://ezmenu.vpsgh.it/demo/controller/addDeviceCtrl.js"></script>
+    <script src="http://ezmenu.vpsgh.it/demo/controller/footerCtrl.js"></script>
+    <link rel="stylesheet" href="http://ezmenu.vpsgh.it/index.css">
 </html>

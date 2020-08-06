@@ -20,7 +20,7 @@ app.controller('editProductCtrl', function ($scope, Upload) {
         for(i = 0; i < root.childNodes.length && root.childNodes[i].childNodes[1].firstChild.nodeValue != $scope.selectProduct; i++);
         console.log(root.childNodes[i].childNodes[2].firstChild.nodeValue);
         $scope.product_name = root.childNodes[i].childNodes[1].firstChild.nodeValue;
-        $scope.product_price = parseInt(root.childNodes[i].childNodes[2].firstChild.nodeValue);
+        $scope.product_price = parseFloat(root.childNodes[i].childNodes[2].firstChild.nodeValue);
         document.getElementById("productImage").src = root.childNodes[i].childNodes[4].firstChild.nodeValue;
         id_p = root.childNodes[i].childNodes[0].firstChild.nodeValue;
     }

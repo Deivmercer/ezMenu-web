@@ -1,19 +1,20 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html ng-app="ezMenu">
     <head>
         <title>ezMenu</title>
+        <link rel="shortcut icon" type="image/png" href="../icon/favicon.png"/>
     </head>
-    <body ng-controller="productListCtrl">
+    <body ng-controller="productListCtrl" style="min-height: 100%">
         <div ng-cloak>
             <md-content>
-                <md-toolbar class="md-hue-2">
-                    <div style="padding-right:30px" class="md-toolbar-tools">
+                <md-toolbar class="md-hue-2" style="position: fixed">
+                    <div style="padding-right: 30px" class="md-toolbar-tools">
                         <h2 flex md-truncate><a href="index.html">ezMenu</a></h2>
                     </div>
                 </md-toolbar>
                 <div style="position: fixed">
                     <md-sidenav style="height: 100vh" class="md-sidenav-left" md-is-locked-open="true" md-whiteframe="4">
-                        <div layout="column">
+                        <div style="padding-top: 70px" layout="column">
                             <md-button href="device_list.html" translate="DEVICELIST"></md-button>
                             <md-button href="add_device.html" translate="ADDDEVICE"></md-button>
                             <md-button href="edit_device.html" translate="EDITDEVICE"></md-button>
@@ -22,24 +23,34 @@
                             <md-button href="add_product.html" translate="ADDPRODUCT"></md-button>
                             <md-button href="edit_product.html" translate="EDITPRODUCT"></md-button>
                             <md-button href="delete_product.html" translate="DELETEPRODUCT"></md-button>
+                            <md-input-container ng-controller="languageSelectorCtrl" style="padding-left: 20px; padding-right: 20px" >
+                                <md-select ng-model="selectLanguage" ng-change="languageSelected(this)">
+                                    <md-option ng-selected="true" value="1">
+                                        {{ "LANGUAGE" | translate }}: {{ "ITALIAN" | translate }}
+                                    </md-option>
+                                    <md-option value="2">
+                                        {{ "LANGUAGE" | translate }}: {{ "English" | translate }}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
                         </div>
                     </md-sidenav>       
                 </div>
                 <div style="padding-left: 323px" >
                     <h2 style="padding-left:23px">{{ "PRODUCTLIST" | translate }}</h2>
-                    <md-list flex>
-                        <md-list-item id="list" class="md-2-line">
-                    </md-list-item>
+                    <md-grid-list md-cols="4" md-row-height="6:4" >       
+                        <md-grid-tile md-rowspan="1" ng-repeat="product in products">
+                            <img style="max-width: 100%; max-height: 100%" src={{product.image}}>
+                            <md-grid-tile-footer>
+                                <h3><font color="black">{{product.name}}</font></h3>
+                                <h3><font color="black">{{product.price}} {{product.currency}}</font></h3>
+                            </md-grid-tile-footer>
+                        </md-grid-tile>
+                    </md-grid-list>
                 </div>
             </md-content>
         </div>
     </body>
-    <footer style="position: fixed" class="footer" ng-controller="footerCtrl">
-        <hr>
-        <center>
-            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer">Italian</a>
-        </center>
-    </footer>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
 	<script src="../bower_components/angular-material/angular-material.min.js"></script>
@@ -51,6 +62,6 @@
     <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
     <script src="controller/app.js"></script>
     <script src="controller/productListCtrl.js"></script>
-    <script src="controller/footerCtrl.js"></script>
+    <script src="controller/languageSelectorCtrl.js"></script>
     <link rel="stylesheet" href="../index.css">
 </html>

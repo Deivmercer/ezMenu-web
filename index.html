@@ -2,6 +2,7 @@
 <html ng-app="ezMenu">
     <head>
         <title>ezMenu</title>
+        <link rel="shortcut icon" type="image/png" href="icon/favicon.png"/>
     </head>
     <body ng-controller="homeCtrl">
         <div ng-cloak>
@@ -10,14 +11,38 @@
                     <div style="padding-right:30px" class="md-toolbar-tools">
                         <h2 flex md-truncate>ezMenu</h2>
                         <md-button href="demo">Demo</md-button>
-                        <md-button translate="GET"></md-button>
+                        <md-button href="/get_ezmenu.html" translate="GET"></md-button>
                     </div>
                 </md-toolbar>
             </md-content>
         </div>
-        <div style="padding-left:20px; padding-top: 20px"></div>
+        <div style="padding-top: 20px; padding-left: 15px; padding-right: 40px">
+            <p style="font-size:18px">
+                ezMenu &egrave; un&rsquo;applicazione open source che si divide in una web app ed un&rsquo;applicazione Android, e mira a semplificare la gestione degli ordini all&rsquo;interno dei ristoranti.
+                La web app &egrave; stata pensata per i gestori del locale, che potranno utilizzarla per modificare il men&ugrave;, avere accesso alle ordinazioni ed aggiungere dei dispositivi.
+                Per il suo funzionamento richiede XAMPP, e nello specifico Apache e phpMyAdmin. Supporta qualsiasi sistema su cui possa essere installato XAMPP.
+                L&rsquo;applicazione Android &egrave; invece pensata per essere a disposizione dei clienti, che potranno utilizzarla per visionare il men&ugrave; ed effettuare ordinazioni.
+                Per essere installata richiede un dispositivo che monti Android 5.1 o superiore, e per il suo funzionamento &egrave; necessario che il dispositivo sia dotato di una fotocamera.
+            </p>
+        </div>
+        <hr>
+        <div style="padding-top: 10px; padding-left: 15px">
+            <h2>{{"GET" | translate}}</h2>
+            <h3>Applicazione Android</h3>
+            Scarica il file di installazione per Android (.apk)
+            Requisiti:
+            <ul>
+                <li>Versione minima di sistema: Android 5.1</li>
+                <li>Fotocamera posteriore (consigliata, ma non obbligatoria)</li>
+            </ul>
+            <md-button href="/apk/ezMenu-0.2.3.apk" class="md-raised md-primary"><md-icon md-font-set="material-icons" style="padding-bottom: 5px;">save</md-icon>Scarica ezMenu</md-button>
+        </div>
+        <hr>
+        <div style="padding-top: 10px; padding-left: 15px">
+            <h3>Applicazione web</h3>
+            <md-button disabled class="md-raised md-primary"><md-icon md-font-set="material-icons" style="padding-bottom: 5px;">save</md-icon>Download</md-button>
+        </div>
     </body>
-    
     <footer class="footer" ng-controller="footerCtrl">
         <hr>
         <center>
@@ -32,6 +57,7 @@
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+	<link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css">
     <script src="controller/app.js"></script>
     <script src="controller/homeCtrl.js"></script>
     <script src="controller/footerCtrl.js"></script>

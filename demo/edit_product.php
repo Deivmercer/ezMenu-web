@@ -30,7 +30,7 @@
                                     WHERE ID_P = ?");
             if(!$query)
                 die("Error: could not prepare 'query' statement.");
-            $query->bind_param("sisi", $product_name, $product_price, substr($product_image, 12), $id_p);
+            $query->bind_param("sdsi", $product_name, $product_price, substr($product_image, 12), $id_p);
             if(!$query)
                 die("Error: could not bind parameters to 'query' statement.");
             $query->execute();
@@ -48,11 +48,11 @@
                                 WHERE ID_P = ?");
         if(!$query)
             die("Error: could not prepare 'query' statement.");
-        $query->bind_param("sii", $product_name, $product_price, $id_p);
+        $query->bind_param("sdi", $product_name, $product_price, $id_p);
         if(!$query)
             die("Error: could not bind parameters to 'query' statement.");
         $query->execute();
-        if(!$query->affected_rows)
+        if(!$query->affected_rows <= 0)
             die("Error: could not execute 'query'.");
         $query->free_result();
         $query->close();

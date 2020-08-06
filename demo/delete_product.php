@@ -17,5 +17,5 @@
     $query->free_result();
     $query->close();
     $conn->close(); 
-    unlink($uploads_dir . $product_image);
+    //unlink(realpath(dirname(__FILE__)) . "/uploaded/" . 
 ?>

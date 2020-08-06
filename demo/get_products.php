@@ -9,6 +9,7 @@
     if($num_rows <= 0)
         die("Error: failed to execute query.");
     $XML = new SimpleXMLElement("<products></products>");
+    $XML->addAttribute("quantity", $num_rows);
     for($i = 0; $i < $num_rows; $i++)
     {
         $row = $result->fetch_assoc();

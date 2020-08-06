@@ -2,6 +2,7 @@
 <html ng-app="ezMenu">
     <head>
         <title>ezMenu</title>
+        <link rel="shortcut icon" type="image/png" href="../icon/favicon.png"/>
     </head>
     <body ng-controller="editDeviceCtrl">
         <div ng-cloak>
@@ -22,13 +23,23 @@
                             <md-button href="add_product.html" translate="ADDPRODUCT"></md-button>
                             <md-button href="edit_product.html" translate="EDITPRODUCT"></md-button>
                             <md-button href="delete_product.html" translate="DELETEPRODUCT"></md-button>
+                            <md-input-container ng-controller="languageSelectorCtrl" style="padding-left: 20px; padding-right: 20px" >
+                                <md-select ng-model="selectLanguage" ng-change="languageSelected(this)">
+                                    <md-option ng-selected="true" value="1">
+                                        {{ "LANGUAGE" | translate }}: {{ "ITALIAN" | translate }}
+                                    </md-option>
+                                    <md-option value="2">
+                                        {{ "LANGUAGE" | translate }}: {{ "English" | translate }}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
                         </div>
                     </md-sidenav>       
                 </div>
                 <div style="padding-left: 323px">
                     <md-card>
                         <md-card-title translate="EDITDEVICE"></md-card-title>
-                        <div style="padding-left:13px; padding-right:1200px">
+                        <div style="padding-left:13px; padding-right: 75%">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label translate="DEVICELIST"></label>
                                 <md-select ng-model="selectDevice" ng-change="deviceSelected()">
@@ -55,12 +66,6 @@
             </md-content>
         </div>
     </body>
-    <footer style="position: fixed" class="footer" ng-controller="footerCtrl">
-        <hr>
-        <center>
-            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor:pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor:pointer">Italian</a>
-        </center>
-    </footer>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="libraries/qrcode.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
@@ -73,6 +78,6 @@
     <script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
     <script src="controller/app.js"></script>
     <script src="controller/editDeviceCtrl.js"></script>
-    <script src="controller/footerCtrl.js"></script>
+    <script src="controller/languageSelectorCtrl.js"></script>
     <link rel="stylesheet" href="../index.css">
 </html>

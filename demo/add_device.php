@@ -17,8 +17,8 @@
     // else
     //     $device_table = $_POST["device_table"];
     require "./libraries/connect.php";
-    $query = $conn->prepare("INSERT INTO device(ID_D, name, table_n, assigned, battery)
-                                VALUES(NULL, ?, ?, 0, 0)");
+    $query = $conn->prepare("INSERT INTO device(ID_D, name, table_n, assigned)
+                             VALUES(NULL, ?, ?, 0)");
     if(!$query)
         die("Error: could not prepare 'query' statement.");
     $query->bind_param("si", $device_name, $device_table);

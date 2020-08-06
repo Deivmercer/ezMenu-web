@@ -59,7 +59,7 @@
                                  VALUES(NULL, ?, ?, 'EUR', ?)");
         if(!$query)
             die("Error: could not prepare 'query' statement.");
-        $query->bind_param("sis", $product_name, $product_price, substr($product_image, 12));
+        $query->bind_param("sds", $product_name, $product_price, substr($product_image, 12));
         if(!$query)
             die("Error: could not bind parameters to 'query' statement.");
         $query->execute();

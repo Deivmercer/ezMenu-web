@@ -1,9 +1,10 @@
 .footer { 
-    position: fixed;     
+    position: absolute;  
     text-align: center;    
-    bottom: 5px; 
+    bottom: 0; 
+    height: 45px;
     width: 100%;
-}  
+}
 
 .side-nav_fix {
     position: absolute;

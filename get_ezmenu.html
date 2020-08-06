@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="ezMenu">
+    <head>
+        <title>ezMenu</title>
+        <link rel="shortcut icon" type="image/png" href="icon/favicon.png"/>
+    </head>
+    <body ng-controller="addDeviceCtrl">
+        <div ng-cloak>
+            <md-content>
+                <md-toolbar class="md-hue-2">
+                    <div style="padding-right:30px" class="md-toolbar-tools">
+                        <h2 flex md-truncate><a href="index.html">ezMenu</a></h2>
+                        <md-button href="demo">Demo</md-button>
+                        <md-button disabled translate="GET"></md-button>
+                    </div>
+                </md-toolbar>
+                <div style="padding-top: 10px; padding-left: 15px">
+                    <h2>{{"GET" | translate}}</h2>
+                    <h3>Applicazione Android</h3>
+                    Scarica il file di installazione per Android (.apk)
+                    Requisiti:
+                    <ul>
+                        <li>Versione minima di sistema: Android 5.1</li>
+                        <li>Fotocamera posteriore (consigliata, ma non obbligatoria)</li>
+                    </ul>
+                    <md-button href="/apk/ezMenu-0.2.3.apk" class="md-raised md-primary"><md-icon md-font-set="material-icons" style="padding-bottom: 5px;">save</md-icon>Scarica ezMenu</md-button>
+                </div>
+                <hr>
+                <div style="padding-top: 10px; padding-left: 15px">
+                    <h3>Applicazione web</h3>
+                    <md-button disabled class="md-raised md-primary"></md-button>
+                </div>
+            </md-content>         
+        </div>
+    </body>
+    <footer style="position: fixed" class="footer" ng-controller="footerCtrl">
+        <hr>
+        <center>
+            {{ "LANGUAGES" | translate }}: <a id="en" ng-click="setEnglish()" style="cursor: pointer; cursor: hand">English</a>&nbsp;<a href"a" ng-click="setItalian()" style="cursor: pointer">Italian</a>
+        </center>
+    </footer>
+    <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+    <scritp src="bower_components/material-design-icons/index.js"></scritp>
+    <script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script> 
+	<link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css">
+    <script src="demo/controller/app.js"></script>
+    <script src="demo/controller/addDeviceCtrl.js"></script>
+    <script src="demo/controller/footerCtrl.js"></script>
+    <link rel="stylesheet" href="index.css">
+</html>
